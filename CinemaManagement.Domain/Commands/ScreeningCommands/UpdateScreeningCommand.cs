@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.ScreeningCommands;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.ScreeningCommands
 {
-    class UpdateScreeningCommand
+    public class UpdateScreeningCommand(IScreeningRepository screeningRepository) : IUpdateScreeningCommand
     {
+        private readonly IScreeningRepository _screeningRepository = screeningRepository;
+        public void UpdateScreening(Screening screening, TimeOnly startTime, TimeOnly endTime, Hall? hall, Movie? movie)
+        {
+            _screeningRepository.UpdateScreening(screening, startTime, endTime, hall, movie);
+        }
     }
 }

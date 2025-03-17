@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.ScreeningCommands;
+using CinemaManagement.Domain.Models;
+using System.Numerics;
 
 namespace CinemaManagement.Domain.Commands.ScreeningCommands
 {
-    class DeleteScreeningCommand
+    public class DeleteScreeningCommand(IScreeningRepository screeningRepository) : IDeleteScreeningCommand
     {
+        private readonly IScreeningRepository _screeningRepository = screeningRepository;
+
+        public void DeleteScreening(Screening screening)
+        {
+            _screeningRepository.DeleteScreening(screening);
+        }
     }
 }

@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.MovieCommands;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.MovieCommands
 {
-    class CreateMovieCommand
+    public class CreateMovieCommand(IMovieRepository movieRepository) : ICreateMovieCommand
     {
+        private readonly IMovieRepository _movieRepository = movieRepository;
+
+        public void AddMovie(Movie movie)
+        {
+            _movieRepository.AddMovie(movie);
+        }
     }
 }

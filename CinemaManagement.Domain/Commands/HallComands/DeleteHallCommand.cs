@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.HallCommands;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.HallComands
 {
-    class DeleteHallCommand
+    public class DeleteHallCommand(IHallRepository hallRepository) : IDeleteHallCommand
     {
+        private readonly IHallRepository _hallRepository = hallRepository;
+
+        public void DeleteHall(Hall hall)
+        {
+            _hallRepository.DeleteHall(hall);
+        }
     }
 }
