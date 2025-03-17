@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaManagement.Api", "CinemaManagement\CinemaManagement.Api.csproj", "{5AE7B7DC-9C79-4DE9-88FC-361E8D83F6E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaManagement.Domain", "CinemaManagement.Domain\CinemaManagement.Domain.csproj", "{CE1EF605-F836-4B71-A32F-C2947B2330B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CinemaManagement.Infrastructure", "CinemaManagement.Infrastructure\CinemaManagement.Infrastructure.csproj", "{C06C0989-CB31-4AF4-BF9B-0A10B2399482}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AE7B7DC-9C79-4DE9-88FC-361E8D83F6E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AE7B7DC-9C79-4DE9-88FC-361E8D83F6E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AE7B7DC-9C79-4DE9-88FC-361E8D83F6E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AE7B7DC-9C79-4DE9-88FC-361E8D83F6E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1EF605-F836-4B71-A32F-C2947B2330B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1EF605-F836-4B71-A32F-C2947B2330B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1EF605-F836-4B71-A32F-C2947B2330B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1EF605-F836-4B71-A32F-C2947B2330B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C06C0989-CB31-4AF4-BF9B-0A10B2399482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C06C0989-CB31-4AF4-BF9B-0A10B2399482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C06C0989-CB31-4AF4-BF9B-0A10B2399482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C06C0989-CB31-4AF4-BF9B-0A10B2399482}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {133F6DE0-880D-4346-8667-13370A1B9D19}
+	EndGlobalSection
+EndGlobal
