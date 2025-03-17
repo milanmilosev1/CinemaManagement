@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.HallCommands;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.HallComands
 {
-    class CreateHallCommand
+    public class CreateHallCommand(IHallRepository hallRepository) : ICreateHallCommand
     {
+        private readonly IHallRepository _hallRepository = hallRepository;
+
+        public void CreateHall(Hall hall)
+        {
+            _hallRepository.AddHall(hall);
+        }
     }
 }

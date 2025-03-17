@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces;
+using CinemaManagement.Domain.Interfaces.ICommand.CinemaCommands;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.CinemaCommands
 {
-    class DeleteCinemaCommand
+    public class DeleteCinemaCommand(ICinemaRepository cinemaRepository) : IDeleteCinemaCommand
     {
+        private readonly ICinemaRepository _cinemaRepository = cinemaRepository;
+        public void DeleteCinema(Cinema cinema)
+        {
+            _cinemaRepository.DeleteCinema(cinema);
+        }
     }
 }
