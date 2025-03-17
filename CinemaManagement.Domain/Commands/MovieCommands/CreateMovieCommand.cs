@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaManagement.Domain.Commands.HallCommands
+namespace CinemaManagement.Domain.Commands.MovieCommands
 {
-    class CreateHall
+    class CreateMovieCommand
     {
     }
 }
