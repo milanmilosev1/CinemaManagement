@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces.IQuery.MovieQueries;
+using CinemaManagement.Domain.Interfaces.IRepositories;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Queries.MovieQueries
 {
-    class GetAllMoviesQuery
+    public class GetAllMoviesQuery(IMovieRepository movieRepository) : IGetAllMoviesQuery
     {
+        private readonly IMovieRepository _movieRepository = movieRepository;
+        public List<Movie> GetAllMovies()
+        {
+            return _movieRepository.GetAllMovies();
+        }
     }
 }

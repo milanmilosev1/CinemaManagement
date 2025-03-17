@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\CinemaManagement.Domain\CinemaManagement.Domain.csproj" />
+    <ProjectReference Include="..\CinemaManagement.Infrastructure\CinemaManagement.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

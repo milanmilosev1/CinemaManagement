@@ -1,5 +1,5 @@
 ﻿using CinemaManagement.Domain.Models;
-using CinemaManagement.Infrastructure.Enums;
+using CinemaManagement.Domain.Enums;
 
 namespace CinemaManagement.Domain.Interfaces.ICommand.MovieCommands
 {

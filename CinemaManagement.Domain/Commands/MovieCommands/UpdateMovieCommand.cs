@@ -1,7 +1,8 @@
 ﻿using CinemaManagement.Domain.Interfaces;
 using CinemaManagement.Domain.Interfaces.ICommand.MovieCommands;
+using CinemaManagement.Domain.Interfaces.IRepositories;
 using CinemaManagement.Domain.Models;
-using CinemaManagement.Infrastructure.Enums;
+using CinemaManagement.Domain.Enums;
 
 namespace CinemaManagement.Domain.Commands.MovieCommands
 {

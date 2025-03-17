@@ -1,5 +1,6 @@
 ﻿using CinemaManagement.Domain.Interfaces;
 using CinemaManagement.Domain.Interfaces.ICommand.HallCommands;
+using CinemaManagement.Domain.Interfaces.IRepositories;
 using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Commands.HallComands
