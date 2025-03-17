@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CinemaManagement.Domain.Commands.MovieCommands
 {
-    class UpdateMovie
+    class DeleteMovieCommand
     {
     }
 }

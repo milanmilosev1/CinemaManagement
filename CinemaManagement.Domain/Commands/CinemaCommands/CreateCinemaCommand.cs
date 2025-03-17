@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaManagement.Domain.Commands.ScreeningCommands
+namespace CinemaManagement.Domain.Commands.CinemaCommands
 {
-    class UpdateScreening
+    class CreateCinemaCommand
     {
     }
 }
