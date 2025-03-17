@@ -1,4 +1,4 @@
-﻿namespace CinemaManagement.Infrastructure.Enums
+﻿namespace CinemaManagement.Domain.Enums
 {
     public enum Genre
     {

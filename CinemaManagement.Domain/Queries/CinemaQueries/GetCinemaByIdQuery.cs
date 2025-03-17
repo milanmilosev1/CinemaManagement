@@ -4,12 +4,13 @@ using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Queries.CinemaQueries
 {
-    public class GetAllCinemasQuery(ICinemaRepository cinemaRepository) : IGetAllCinemasQuery
+    public class GetCinemaByIdQuery(ICinemaRepository cinemaRepository) : IGetCinemaByIdQuery
     {
         private readonly ICinemaRepository _cinemaRepository = cinemaRepository;
-        public List<Cinema> GetAllCinemas()
+
+        public Cinema GetCinemaById(Guid id)
         {
-            return _cinemaRepository.GetAllCinemas();
+            return _cinemaRepository.GetCinemaById(id);
         }
     }
 }

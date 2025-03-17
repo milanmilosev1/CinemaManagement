@@ -1,4 +1,4 @@
-﻿using CinemaManagement.Domain.Interfaces;
+﻿using CinemaManagement.Domain.Interfaces.IRepositories;
 using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Infrastructure.Repositories
@@ -14,6 +14,16 @@ namespace CinemaManagement.Infrastructure.Repositories
         public void DeleteScreening(Screening screening)
         {
             Screenings.Remove(screening);
+        }
+
+        public List<Screening> GetAllScreenings()
+        {
+            List<Screening> returnList = [];
+            foreach(var s in Screenings)
+            {
+                returnList.Add(s);
+            }
+            return returnList;
         }
 
         public void UpdateScreening(Screening screening, TimeOnly startTime, TimeOnly endTime, Hall? hall, Movie? movie)

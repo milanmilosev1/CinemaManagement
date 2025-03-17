@@ -1,6 +1,12 @@
+using CinemaManagement.Domain.Interfaces.IRepositories;
+using CinemaManagement.Infrastructure.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddSingleton<ICinemaRepository, CinemaRepository>();
+builder.Services.AddSingleton<IHallRepository, HallRepository>();
+builder.Services.AddSingleton<IMovieRepository, MovieRepository>();
+builder.Services.AddSingleton<IScreeningRepository, ScreeningRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

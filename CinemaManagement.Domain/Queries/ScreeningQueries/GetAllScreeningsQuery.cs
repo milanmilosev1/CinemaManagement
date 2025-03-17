@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CinemaManagement.Domain.Interfaces.IQuery.ScreeningQueries;
+using CinemaManagement.Domain.Interfaces.IRepositories;
+using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Domain.Queries.ScreeningQueries
 {
-    class GetAllScreeningsQuery
+    public class GetAllScreeningsQuery(IScreeningRepository screeningRepository) : IGetAllScreeningsQuery
     {
+        private readonly IScreeningRepository _screeningRepository = screeningRepository;
+        public List<Screening> GetAllScreenings()
+        {
+            return _screeningRepository.GetAllScreenings();
+        }
     }
 }
