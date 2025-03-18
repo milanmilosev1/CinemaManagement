@@ -5,6 +5,6 @@ namespace CinemaManagement.Domain.Interfaces.ICommand.MovieCommands
 {
     public interface IUpdateMovieCommand
     {
-        public void UpdateMovie(Movie movie, string? title, TimeOnly? durationMinutes, int? year, Genre genre, List<Screening> screenings);
+        public void UpdateMovie(Movie movie, string? title, int? durationMinutes, int? year, Genre genre, List<Screening> screenings);
     }
 }

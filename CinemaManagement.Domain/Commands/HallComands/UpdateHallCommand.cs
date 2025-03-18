@@ -9,9 +9,9 @@ namespace CinemaManagement.Domain.Commands.HallComands
     {
         private readonly IHallRepository _hallRepository = hallRepository;
 
-        public void UpdateHall(Hall hall, string? name, int capacity, int rows, Cinema? cinema, List<Movie>? movies)
+        public void UpdateHall(Hall hall, string? name, int capacity, int rows, List<Movie>? movies)
         {
-            _hallRepository.UpdateHall(hall, name, capacity, rows, cinema, movies);
+            _hallRepository.UpdateHall(hall, name, capacity, rows, movies);
         }
     }
 }

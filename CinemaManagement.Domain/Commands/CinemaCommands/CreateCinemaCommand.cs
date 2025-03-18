@@ -8,7 +8,7 @@ namespace CinemaManagement.Domain.Commands.CinemaCommands
     {
         private readonly ICinemaRepository _cinemaRepository = cinemaRepository;
 
-        public void CreateAndAddCinema(Cinema cinema)
+        public void AddCinema(Cinema cinema)
         {
             _cinemaRepository.AddCinema(cinema);
         }

@@ -2,9 +2,8 @@
 {
     public class Screening
     {
-        public TimeOnly StartTime { get; set; }
-        public TimeOnly EndTime { get; set; }
-        public Hall? Hall { get; set; }
-        public Movie? Movie { get; set; }
+        public Guid Id { get; set; }
+        public string? StartTime { get; set; }
+        public string? EndTime { get; set; }
     }
 }

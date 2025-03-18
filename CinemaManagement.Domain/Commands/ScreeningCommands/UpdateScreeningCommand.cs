@@ -7,9 +7,9 @@ namespace CinemaManagement.Domain.Commands.ScreeningCommands
     public class UpdateScreeningCommand(IScreeningRepository screeningRepository) : IUpdateScreeningCommand
     {
         private readonly IScreeningRepository _screeningRepository = screeningRepository;
-        public void UpdateScreening(Screening screening, TimeOnly startTime, TimeOnly endTime, Hall? hall, Movie? movie)
+        public void UpdateScreening(Screening screening, string? startTime, string? endTime)
         {
-            _screeningRepository.UpdateScreening(screening, startTime, endTime, hall, movie);
+            _screeningRepository.UpdateScreening(screening, startTime, endTime);
         }
     }
 }

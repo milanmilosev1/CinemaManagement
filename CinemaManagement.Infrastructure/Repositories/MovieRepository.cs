@@ -1,5 +1,5 @@
-﻿using CinemaManagement.Domain.Enums;
-using CinemaManagement.Domain.Interfaces.IRepositories;
+﻿using CinemaManagement.Domain.Interfaces.IRepositories;
+using CinemaManagement.Domain.Enums;
 using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Infrastructure.Repositories
@@ -17,8 +17,16 @@ namespace CinemaManagement.Infrastructure.Repositories
             Movies.Remove(movie);
         }
 
-        public void UpdateMovie(Movie movie, string? title, TimeOnly? durationMinutes, int? year, Genre genre, List<Screening> screenings)
+        public void UpdateMovie(Movie movie, string? title, int? durationMinutes, int? year, Genre genre, List<Screening> screenings)
         {
+            if(movie != null)
+            {
+                movie.Title = title;
+                movie.DurationMinutes = durationMinutes;
+                movie.Year = year;
+                movie.Genre = genre;
+                movie.Screenings = screenings;
+            }
             return;
         }
 

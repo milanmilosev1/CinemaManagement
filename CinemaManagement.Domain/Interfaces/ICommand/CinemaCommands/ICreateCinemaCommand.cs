@@ -4,7 +4,7 @@ namespace CinemaManagement.Domain.Interfaces.ICommand.CinemaCommands
 {
     public interface ICreateCinemaCommand
     {
-        public void CreateAndAddCinema(Cinema cinema);
+        public void AddCinema(Cinema cinema);
     }
 }
 
