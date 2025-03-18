@@ -9,7 +9,7 @@ namespace CinemaManagement.Domain.Commands.MovieCommands
     public class UpdateMovieCommand(IMovieRepository movieRepository) : IUpdateMovieCommand
     {
         private readonly IMovieRepository _movieRepository = movieRepository;
-        public void UpdateMovie(Movie movie, string? title, TimeOnly? durationMinutes, int? year, Genre genre, List<Screening> screenings)
+        public void UpdateMovie(Movie movie, string? title, int? durationMinutes, int? year, Genre genre, List<Screening> screenings)
         {
             _movieRepository.UpdateMovie(movie, title, durationMinutes, year, genre, screenings);
         }

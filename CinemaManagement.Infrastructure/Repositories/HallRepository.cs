@@ -1,33 +1,35 @@
-﻿using CinemaManagement.Domain.Interfaces;
-using CinemaManagement.Domain.Interfaces.IRepositories;
+﻿using CinemaManagement.Domain.Interfaces.IRepositories;
+using CinemaManagement.Infrastructure.DataContext;
 using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Infrastructure.Repositories
 {
-    public class HallRepository : IHallRepository
+    public class HallRepository(CinemaDbContext dbContext) : IHallRepository
     {
-        public List<Hall> Halls = [];
+        private readonly CinemaDbContext Context = dbContext;
         public void AddHall(Hall hall)
         {
-            Halls.Add(hall);
+            Context.Halls.Add(hall);
+            Context.SaveChanges();
         }
 
         public void DeleteHall(Hall hall)
         {
-            Halls.Remove(hall);
+            Context.Halls.Remove(hall);
+            Context.SaveChanges();
         }
 
         public List<Hall> GetAllHalls()
         {
             List<Hall> returnHalls = [];
-            foreach(var hall in Halls)
+            foreach(var hall in Context.Halls)
             {
                 returnHalls.Add(hall);
             }
             return returnHalls;
         }
 
-        public void UpdateHall(Hall hall, string? name, int capacity, int rows, Cinema? cinema, List<Movie>? movies)
+        public void UpdateHall(Hall hall, string? name, int capacity, int rows, List<Movie>? movies)
         {
             //TO BE IMPLEMENTED
             return;

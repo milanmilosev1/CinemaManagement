@@ -4,6 +4,6 @@ namespace CinemaManagement.Domain.Interfaces.ICommand.HallCommands
 {
     public interface IUpdateHallCommand
     {
-        public void UpdateHall(Hall hall, string? name, int capacity, int rows, Cinema? cinema, List<Movie>? movies);
+        public void UpdateHall(Hall hall, string? name, int capacity, int rows, List<Movie>? movies);
     }
 }

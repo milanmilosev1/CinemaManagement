@@ -1,25 +1,29 @@
-﻿using CinemaManagement.Domain.Interfaces.IRepositories;
+﻿using CinemaManagement.Infrastructure.DataContext;
+using CinemaManagement.Domain.Interfaces.IRepositories;
 using CinemaManagement.Domain.Models;
 
 namespace CinemaManagement.Infrastructure.Repositories
 {
-    public class CinemaRepository : ICinemaRepository
+    public class CinemaRepository(CinemaDbContext dbContext) : ICinemaRepository
     {
-        public List<Cinema> Cinemas = [];
+        private readonly CinemaDbContext Context = dbContext;
+
         public void AddCinema(Cinema cinema)
         {
-            Cinemas.Add(cinema);
+            Context.Cinemas.Add(cinema);
+            Context.SaveChanges();
         }
 
         public void DeleteCinema(Cinema cinema)
         {
-            Cinemas.Remove(cinema);
+            Context.Cinemas.Remove(cinema);
+            Context.SaveChanges();
         }
 
         public List<Cinema> GetAllCinemas()
         {
             List<Cinema> returnList = [];
-            foreach(var cinema in Cinemas)
+            foreach (var cinema in Context.Cinemas)
             {
                 returnList.Add(cinema);
             }
@@ -28,13 +32,25 @@ namespace CinemaManagement.Infrastructure.Repositories
 
         public Cinema GetCinemaById(Guid id)
         {
-            return Cinemas.FirstOrDefault(x => x.Id == id)!;
+            throw new NotImplementedException();
         }
 
         public void UpdateCinema(Cinema cinema, string? name, string? location, List<Hall> halls)
         {
-            // TO BE IMPLEMENTED
+            if(cinema != null)
+            {
+                cinema.Name = name;
+                cinema.Location = location;
+                cinema.Halls = halls;
+            }
             return;
+        }
+
+        private IQueryable<Cinema?> GetQueryable()
+        {
+            var cinemas = Context.Cinemas;
+
+            return cinemas;
         }
     }
 }

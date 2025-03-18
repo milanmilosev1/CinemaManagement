@@ -4,6 +4,6 @@ namespace CinemaManagement.Domain.Interfaces.ICommand.ScreeningCommands
 {
     public interface IUpdateScreeningCommand
     {
-        public void UpdateScreening(Screening screening, TimeOnly startTime, TimeOnly endTime, Hall? hall, Movie? movie);
+        public void UpdateScreening(Screening screening, string? startTime, string? endTime);
     }
 }

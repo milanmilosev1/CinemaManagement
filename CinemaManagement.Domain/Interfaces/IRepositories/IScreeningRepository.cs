@@ -6,7 +6,7 @@ namespace CinemaManagement.Domain.Interfaces.IRepositories
     {
         public void AddScreening(Screening screening);
         public void DeleteScreening(Screening screening);
-        public void UpdateScreening(Screening screening, TimeOnly startTime, TimeOnly endTime, Hall? hall, Movie? movie);
+        public void UpdateScreening(Screening screening, string? startTime, string? endTime);
         public List<Screening> GetAllScreenings();
     }
 }

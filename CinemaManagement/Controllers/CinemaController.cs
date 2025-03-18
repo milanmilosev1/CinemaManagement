@@ -1,4 +1,5 @@
-﻿using CinemaManagement.Domain.Interfaces.IRepositories;
+﻿using CinemaManagement.Domain.Interfaces.ICommand.CinemaCommands;
+using CinemaManagement.Domain.Interfaces.IQuery.CinemaQueries;
 using CinemaManagement.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,21 +7,33 @@ namespace CinemaManagement.Api.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class CinemaController(ICinemaRepository cinemaRepository) : ControllerBase
+    public class CinemaController(ICreateCinemaCommand createCinemaCommand, IDeleteCinemaCommand deleteCinemaCommand) : ControllerBase
     {
-        private readonly ICinemaRepository _cinemaRepository = cinemaRepository;
+        private readonly ICreateCinemaCommand _createCinemaCommand = createCinemaCommand;
+        private readonly IDeleteCinemaCommand _deleteCinemaCommand = deleteCinemaCommand;
 
-        [HttpGet]
-        public List<Cinema> GetCinemas()
-        {
-            return _cinemaRepository.GetAllCinemas();
-        }
+        //[HttpGet]
+        //public List<Cinema> GetCinemas()
+        //{
+        //    return getAllCinemasQuery.GetAllCinemas();
+        //}
 
         [HttpDelete]
         public void DeleteCinema(Cinema cinema)
         {
-            _cinemaRepository.DeleteCinema(cinema);
+            _deleteCinemaCommand.DeleteCinema(cinema);
         }
 
+        [HttpPost]
+        public void AddCinema([FromBody]Cinema cinema)
+        {
+            _createCinemaCommand.AddCinema(cinema);
+        }
+
+        //[HttpPatch]
+        //public void UpdateCinema(Cinema cinema, string? name, string? location, List<Hall> halls)
+        //{
+        //    _cinemaRepository.UpdateCinema(cinema, name, location, halls);
+        //}
     }
 }
